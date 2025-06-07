@@ -35,10 +35,13 @@
   background-color: #1D273A;
   color: white;
   font-size: 24px;
+  transition: all 0.5s;
 }
 
 .top-scroll-btn:hover {
   background-color: #263553;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .modal-container {

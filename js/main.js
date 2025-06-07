@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var button1 = document.querySelector('.service-btn');
     var button2 = document.querySelector('.academic-btn');
-    var button3 = document.querySelector('.top-scroll-btn');
+    var topButton = document.querySelector('.top-scroll-btn');
+    var footerTopButton = document.querySelector('.top-btn');
     var popup1 = document.getElementById('serviceModal');
     var popup2 = document.getElementById('academicModal');
     var closeButtons = document.querySelectorAll('.modal-close');
@@ -215,9 +216,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    button3.addEventListener('click', function() {
-        window.scrollTo(0, 0);
+    function simpleScrollToTop() {
+        var currentPosition = window.scrollY;
+        
+        var scrollSpeed = 30;     
+        var scrollInterval = 15;  
+        
+        function scrollStep() {
+            if (window.scrollY > 0) {
+                var nextPosition = window.scrollY - scrollSpeed;
+                
+                if (nextPosition < 0) {
+                    nextPosition = 0;
+                }
+                
+                window.scrollTo(0, nextPosition);
+                
+                if (nextPosition > 0) {
+                    setTimeout(scrollStep, scrollInterval);
+                }
+            }
+        }
+        
+        scrollStep();
+    }
+
+    topButton.addEventListener('click', function() {
+        simpleScrollToTop();
     });
+
+    if (footerTopButton) {
+        footerTopButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            simpleScrollToTop();
+        });
+    }
 
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
