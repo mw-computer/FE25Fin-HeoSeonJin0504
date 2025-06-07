@@ -181,11 +181,55 @@ document.addEventListener('DOMContentLoaded', function() {
         isMobileMenuOpen = false;
     }
 
-    document.querySelector('.top-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    var button1 = document.querySelector('.service-btn');
+    var button2 = document.querySelector('.academic-btn');
+    var button3 = document.querySelector('.top-scroll-btn');
+    var popup1 = document.getElementById('serviceModal');
+    var popup2 = document.getElementById('academicModal');
+    var closeButtons = document.querySelectorAll('.modal-close');
+    
+    function showPopup(popupWindow) {
+        popupWindow.style.display = 'flex';
+    }
+    
+    function hidePopup(popupWindow) {
+        popupWindow.style.display = 'none';
+    }
+
+    button1.addEventListener('click', function() {
+        showPopup(popup1);
+        hidePopup(popup2);
+    });
+
+    button2.addEventListener('click', function() {
+        showPopup(popup2);
+        hidePopup(popup1);
+    });
+
+    for(var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener('click', function() {
+            var popupWindow = this.closest('.modal-container');
+            if (popupWindow) {
+                hidePopup(popupWindow);
+            }
         });
+    }
+
+    button3.addEventListener('click', function() {
+        window.scrollTo(0, 0);
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            hidePopup(popup1);
+            hidePopup(popup2);
+        }
+    });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 1280) {
+            hidePopup(popup1);
+            hidePopup(popup2);
+        }
     });
 });

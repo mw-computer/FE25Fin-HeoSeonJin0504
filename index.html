@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/mainone.css" />
     <link rel="stylesheet" href="css/mainnews.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/floating-menu.css" />
   </head>
   <body>
     <header>
@@ -261,6 +262,53 @@
         </div>
       </div>
     </div>
+    <!-- 플로팅 메뉴 버튼 추가 -->
+    <div class="floating-menu">
+      <button class="floating-btn service-btn">주요<br>서비스</button>
+      <button class="floating-btn academic-btn">학사</button>
+      <button class="floating-btn top-scroll-btn">↑</button>
+    </div>
+
+    <!-- 주요 서비스 모달 -->
+    <div id="serviceModal" class="modal-container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>주요서비스</h2>
+          <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="service-grid">
+            <a href="#" class="service-item">종합정보시스템</a>
+            <a href="#" class="service-item">수강신청시스템</a>
+            <a href="#" class="service-item">취업정보시스템</a>
+            <a href="#" class="service-item">증명서발급</a>
+            <a href="#" class="service-item">중앙도서관</a>
+            <a href="#" class="service-item">교내연락처</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 학사 모달 -->
+    <div id="academicModal" class="modal-container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>학사</h2>
+          <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="service-grid">
+            <a href="#" class="service-item">학사일정</a>
+            <a href="#" class="service-item">장학</a>
+            <a href="#" class="service-item">휴학</a>
+            <a href="#" class="service-item">복학</a>
+            <a href="#" class="service-item">민원상담</a>
+            <a href="#" class="service-item">학교식당(식단)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <footer class="footer-box">
       <div class="footer-inner container">
         <div class="footer-top">
