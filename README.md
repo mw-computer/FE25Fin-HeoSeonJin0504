@@ -2,7 +2,7 @@
 # 웹화면구현 파이널 프로젝트
 
 ### 컴퓨터공학과 허선진
-> 디플로이된 웹사이트 주소 : [기말프로젝트](https://radiant-frangipane-8332fa.netlify.app)
+> 디플로이된 웹사이트 주소 : [2051057 허선진 - 목대컴공](https://radiant-frangipane-8332fa.netlify.app)
 
 ### 파이널 프로젝트 요약
 
